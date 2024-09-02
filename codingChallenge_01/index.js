@@ -1,12 +1,23 @@
-var Dolphins = [44, 23, 71];
-var Koalas = [65, 54, 49];
-var calcAverage = (arr) => {
-    return arr.reduce((acc, num) => acc + num) / arr.length;
+var Dolphins  = [85, 54, 41]
+var Koalas = [23, 34, 27]
+
+// var avgDolphins = Dolphins.reduce((acc, num) => acc + num)/ Dolphins.length
+// var avgKoalas = Koalas.reduce((acc, num)=> acc + num)/ Koalas.length
+var calcAverage = (arr)=>{
+    return arr.reduce((acc, num)=> acc + num)/arr.length;
 }
 
-var checkWinner = (avgDolhins, avgKoalas) => {
-    return avgDolhins > avgKoalas ? console.log(`Dolphins win (${avgDolhins.toFixed(3)} vs. ${avgKoalas.toFixed(3)})`) : console.log(`Koalas win (${avgKoalas.toFixed(3)} vs. ${avgDolhins.toFixed(3)})`);
+var avgDolphins = calcAverage(Dolphins)
+var avgKoalas = calcAverage(Koalas)
+// console.log(avgKoalas);
+var checkWinner = (avgDolphins, avgKoalas)=>{
+    // avgDolphins>avgKoalas ? console.log(`Dolphins thắng (${avgDolphins} so với ${avgKoalas})`):console.log(`Koalas thắng (${avgKoalas} so với ${avgDolphins})`);
+    if(avgDolphins>avgKoalas){
+        avgDolphins >=2*avgKoalas ? console.log(`Dolphins thắng (${avgDolphins} so với ${avgKoalas})`):console.log(`Không có đội nào thắng`);
+    }else{
+        avgKoalas >=2*avgDolphins ? console.log(`Koalas thắng (${avgDolphins} so với ${avgKoalas})`):console.log(`Không có đội nào thắng`);
+        
+    }
 }
-var avgDolphins = calcAverage(Dolphins);
-var avgKoalas = calcAverage(Koalas);
-checkWinner(avgDolphins, avgKoalas);
+
+checkWinner(avgDolphins, avgKoalas)
